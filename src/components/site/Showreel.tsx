@@ -1,4 +1,4 @@
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
+import showreel from "@/assets/showreel-video.mp4.asset.json";
 
 export function Showreel() {
   return (
@@ -19,7 +19,7 @@ export function Showreel() {
         <div className="ring-grad relative overflow-hidden rounded-[2rem]">
           <div className="absolute -inset-20 -z-10 opacity-60 blur-3xl" style={{ background: "var(--gradient-brand)" }} />
           <video
-            src={heroVideo.url}
+            src={showreel.url}
             autoPlay
             muted
             loop
