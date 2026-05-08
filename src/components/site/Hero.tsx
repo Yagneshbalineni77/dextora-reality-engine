@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import heroVideo from "@/assets/hero-video.mp4.asset.json";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const HEADLINE = ["Engineering", "the", "interactive", "future."];
 
@@ -30,7 +30,8 @@ export function Hero() {
       {/* Cinematic video bed */}
       <div className="absolute inset-0 -z-20">
         <video
-          src={heroVideo.url}
+          src="/hero-video.mp4"
+          poster={heroBg}
           autoPlay
           muted
           loop
