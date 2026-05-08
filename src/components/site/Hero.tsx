@@ -27,19 +27,19 @@ export function Hero() {
       className="relative isolate overflow-hidden pb-24 pt-32 sm:pb-32 sm:pt-40 md:pt-52 noise"
       style={{ ["--mx" as string]: "50%", ["--my" as string]: "30%" }}
     >
-      {/* Cinematic video bed */}
-      <div className="absolute inset-0 -z-20">
-        <video
-          src="/hero-video.mp4"
-          poster={heroBg}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="h-full w-full scale-110 object-cover opacity-70"
+      {/* Cinematic animated bed */}
+      <div className="absolute inset-0 -z-20 overflow-hidden bg-background">
+        <div
+          className="absolute inset-0 opacity-40 mix-blend-screen transition-transform duration-1000 ease-out"
+          style={{
+            backgroundImage: `url(${heroBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            transform: "scale(1.05)",
+            animation: "pulse-slow 8s infinite alternate ease-in-out",
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
       </div>
 
       {/* Cursor-reactive aurora */}
@@ -55,10 +55,20 @@ export function Hero() {
 
       {/* Floating frost orbs */}
       <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-[8%] top-[20%] h-40 w-40 rounded-full opacity-40 blur-3xl"
-             style={{ background: "var(--gradient-brand)", animation: "float 9s ease-in-out infinite" }} />
-        <div className="absolute right-[10%] top-[55%] h-56 w-56 rounded-full opacity-30 blur-3xl"
-             style={{ background: "linear-gradient(120deg, var(--cyan), transparent)", animation: "float 12s ease-in-out infinite reverse" }} />
+        <div
+          className="absolute left-[8%] top-[20%] h-40 w-40 rounded-full opacity-40 blur-3xl"
+          style={{
+            background: "var(--gradient-brand)",
+            animation: "float 9s ease-in-out infinite",
+          }}
+        />
+        <div
+          className="absolute right-[10%] top-[55%] h-56 w-56 rounded-full opacity-30 blur-3xl"
+          style={{
+            background: "linear-gradient(120deg, var(--cyan), transparent)",
+            animation: "float 12s ease-in-out infinite reverse",
+          }}
+        />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6">
@@ -106,20 +116,32 @@ export function Hero() {
 
         <p
           className="mx-auto mt-6 max-w-2xl px-2 text-center text-sm text-muted-foreground sm:mt-8 sm:text-base md:text-lg"
-          style={{ animation: "fade-up 1.3s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "0.75s" }}
+          style={{
+            animation: "fade-up 1.3s cubic-bezier(0.22,1,0.36,1) both",
+            animationDelay: "0.75s",
+          }}
         >
-          We build cinematic AI products that replace the generic web — from adaptive learning engines
-          to autonomous video studios and reality-grade site generators.
+          We build cinematic AI products that replace the generic web — from adaptive learning
+          engines to autonomous video studios and reality-grade site generators.
         </p>
 
         <div
           className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:mt-12 sm:flex-row sm:items-center"
-          style={{ animation: "fade-up 1.4s cubic-bezier(0.22,1,0.36,1) both", animationDelay: "0.95s" }}
+          style={{
+            animation: "fade-up 1.4s cubic-bezier(0.22,1,0.36,1) both",
+            animationDelay: "0.95s",
+          }}
         >
-          <a href="#products" className="btn-primary inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium sm:px-7 sm:py-3.5">
+          <a
+            href="#products"
+            className="btn-primary inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium sm:px-7 sm:py-3.5"
+          >
             Explore the work
           </a>
-          <a href="#contact" className="btn-ghost inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium sm:px-7 sm:py-3.5">
+          <a
+            href="#contact"
+            className="btn-ghost inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium sm:px-7 sm:py-3.5"
+          >
             Partner with us
             <span aria-hidden>→</span>
           </a>
@@ -132,9 +154,14 @@ export function Hero() {
             { k: "60s", v: "Idea → cinematic site" },
             { k: "98%", v: "Target success rate" },
           ].map((s) => (
-            <div key={s.v} className="bg-card/70 px-5 py-5 text-left backdrop-blur-md sm:px-6 sm:py-7">
+            <div
+              key={s.v}
+              className="bg-card/70 px-5 py-5 text-left backdrop-blur-md sm:px-6 sm:py-7"
+            >
               <dt className="font-display text-3xl text-brand-gradient sm:text-4xl">{s.k}</dt>
-              <dd className="mt-1.5 text-[10px] uppercase tracking-[0.25em] text-muted-foreground sm:mt-2 sm:text-[11px]">{s.v}</dd>
+              <dd className="mt-1.5 text-[10px] uppercase tracking-[0.25em] text-muted-foreground sm:mt-2 sm:text-[11px]">
+                {s.v}
+              </dd>
             </div>
           ))}
         </dl>
@@ -143,7 +170,10 @@ export function Hero() {
       {/* Scroll cue */}
       <div className="pointer-events-none absolute inset-x-0 bottom-6 flex justify-center">
         <div className="flex h-9 w-5 items-start justify-center rounded-full border border-border/80">
-          <div className="mt-1.5 h-2 w-0.5 rounded-full bg-foreground/70" style={{ animation: "float 1.6s ease-in-out infinite" }} />
+          <div
+            className="mt-1.5 h-2 w-0.5 rounded-full bg-foreground/70"
+            style={{ animation: "float 1.6s ease-in-out infinite" }}
+          />
         </div>
       </div>
     </section>

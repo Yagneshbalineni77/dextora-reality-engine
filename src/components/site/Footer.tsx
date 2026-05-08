@@ -7,9 +7,15 @@ export function Footer() {
         <Logo />
         <p>© {new Date().getFullYear()} Dextora Labs. Onyx & Frost.</p>
         <div className="flex gap-5">
-          <a href="#products" className="hover:text-foreground">Products</a>
-          <a href="#about" className="hover:text-foreground">Studio</a>
-          <a href="#contact" className="hover:text-foreground">Contact</a>
+          <a href="#products" className="hover:text-foreground">
+            Products
+          </a>
+          <a href="#about" className="hover:text-foreground">
+            Studio
+          </a>
+          <a href="#contact" className="hover:text-foreground">
+            Contact
+          </a>
         </div>
       </div>
     </footer>
