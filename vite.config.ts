@@ -8,12 +8,21 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     tsconfigPaths({ projects: ["./tsconfig.json"] }),
-    tanstackStart(),
+    tanstackStart({
+      server: {
+        prerender: {
+          routes: ["/"],
+        },
+      },
+    }),
     react(),
   ],
   resolve: {
     alias: {
       "@": "/src",
     },
+  },
+  preview: {
+    allowedHosts: true,
   },
 });
