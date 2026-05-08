@@ -47,24 +47,24 @@ const products: Product[] = [
 
 export function Products() {
   return (
-    <section id="products" className="relative py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-24 flex items-end justify-between gap-6">
+    <section id="products" className="relative py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6">
+        <div className="mb-16 flex flex-col items-start justify-between gap-6 sm:mb-24 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Selected Work</p>
-            <h2 className="mt-4 font-display text-4xl tracking-tight md:text-6xl">
+            <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground sm:text-xs">Selected Work</p>
+            <h2 className="mt-3 font-display text-4xl tracking-tight sm:mt-4 sm:text-5xl md:text-6xl">
               Three products. <span className="text-brand-gradient italic">One obsession.</span>
             </h2>
           </div>
-          <p className="hidden max-w-sm text-sm text-muted-foreground md:block">
+          <p className="max-w-sm text-sm text-muted-foreground">
             Each Dextora product is engineered with the same north star: replace the generic with the
             cinematic, and make state-of-the-art feel inevitable.
           </p>
         </div>
 
-        <div className="space-y-40">
+        <div className="space-y-24 sm:space-y-40">
           {products.map((p, i) => (
-            <article key={p.name} className="group grid items-center gap-12 md:grid-cols-12">
+            <article key={p.name} className="group grid items-center gap-8 sm:gap-12 md:grid-cols-12">
               {/* Visual */}
               <div className={`relative md:col-span-7 ${i % 2 ? "md:order-2" : ""}`}>
                 <div className="ring-grad relative overflow-hidden rounded-3xl">
@@ -102,8 +102,8 @@ export function Products() {
                   <span>{p.index}</span>
                   <span className="h-px flex-1 bg-border" />
                 </div>
-                <h3 className="mt-5 font-display text-3xl tracking-tight md:text-5xl">{p.name}</h3>
-                <p className="mt-4 text-lg text-foreground/90 md:text-xl">{p.tagline}</p>
+                <h3 className="mt-5 font-display text-3xl tracking-tight sm:text-4xl md:text-5xl">{p.name}</h3>
+                <p className="mt-4 text-base text-foreground/90 sm:text-lg md:text-xl">{p.tagline}</p>
                 <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
                 <ul className="mt-7 grid grid-cols-2 gap-2.5 text-sm">
                   {p.bullets.map((b) => (
