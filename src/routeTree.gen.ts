@@ -9,38 +9,83 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ProductsRouteImport } from './routes/products'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductsSlugRouteImport } from './routes/products.$slug'
+import { Route as CaseStudiesCopyCheckerRouteImport } from './routes/case-studies.copy-checker'
 
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsSlugRoute = ProductsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ProductsRoute,
+} as any)
+const CaseStudiesCopyCheckerRoute = CaseStudiesCopyCheckerRouteImport.update({
+  id: '/case-studies/copy-checker',
+  path: '/case-studies/copy-checker',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/products': typeof ProductsRouteWithChildren
+  '/case-studies/copy-checker': typeof CaseStudiesCopyCheckerRoute
+  '/products/$slug': typeof ProductsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/products': typeof ProductsRouteWithChildren
+  '/case-studies/copy-checker': typeof CaseStudiesCopyCheckerRoute
+  '/products/$slug': typeof ProductsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/products': typeof ProductsRouteWithChildren
+  '/case-studies/copy-checker': typeof CaseStudiesCopyCheckerRoute
+  '/products/$slug': typeof ProductsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/products'
+    | '/case-studies/copy-checker'
+    | '/products/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/products' | '/case-studies/copy-checker' | '/products/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/products'
+    | '/case-studies/copy-checker'
+    | '/products/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ProductsRoute: typeof ProductsRouteWithChildren
+  CaseStudiesCopyCheckerRoute: typeof CaseStudiesCopyCheckerRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +93,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products/$slug': {
+      id: '/products/$slug'
+      path: '/$slug'
+      fullPath: '/products/$slug'
+      preLoaderRoute: typeof ProductsSlugRouteImport
+      parentRoute: typeof ProductsRoute
+    }
+    '/case-studies/copy-checker': {
+      id: '/case-studies/copy-checker'
+      path: '/case-studies/copy-checker'
+      fullPath: '/case-studies/copy-checker'
+      preLoaderRoute: typeof CaseStudiesCopyCheckerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface ProductsRouteChildren {
+  ProductsSlugRoute: typeof ProductsSlugRoute
+}
+
+const ProductsRouteChildren: ProductsRouteChildren = {
+  ProductsSlugRoute: ProductsSlugRoute,
+}
+
+const ProductsRouteWithChildren = ProductsRoute._addFileChildren(
+  ProductsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ProductsRoute: ProductsRouteWithChildren,
+  CaseStudiesCopyCheckerRoute: CaseStudiesCopyCheckerRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
