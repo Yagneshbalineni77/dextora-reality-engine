@@ -19,12 +19,7 @@ const products: Product[] = [
     tagline: "India's most advanced AI-powered learning engine.",
     description:
       "We replaced static video lectures with a real-time adaptive curriculum. An immersive reality engine for K-12 and higher education — scaled to thousands, engineered for mastery.",
-    bullets: [
-      "Adaptive AI tutor",
-      "Reality engine canvas",
-      "Parent + Educator portals",
-      "14,000+ learners",
-    ],
+    bullets: ["Adaptive AI tutor", "Reality engine canvas", "Parent + Educator portals", "14,000+ learners"],
     image: edu,
     meta: "EdTech · AI · 2025",
   },
@@ -34,12 +29,7 @@ const products: Product[] = [
     tagline: "Cinematic short-form video — generated from a single prompt.",
     description:
       "A production-grade SaaS that turns text into scroll-stopping reels in seconds. Studio-tier dark UI. Brand-ready outputs. Built for marketers and creators who refuse to look generic.",
-    bullets: [
-      "Prompt → Reel in seconds",
-      "Brand-conditioned outputs",
-      "Studio-tier dark UI",
-      "Algorithm-tuned formats",
-    ],
+    bullets: ["Prompt → Reel in seconds", "Brand-conditioned outputs", "Studio-tier dark UI", "Algorithm-tuned formats"],
     image: reels,
     meta: "Generative AI · SaaS · 2025",
   },
@@ -49,12 +39,7 @@ const products: Product[] = [
     tagline: "Awwwards-grade websites — orchestrated in 60 seconds.",
     description:
       "A multi-modal pipeline fusing LLM creative direction, Google VEO video, WebGL fluid shaders and GSAP scrollytelling into investor-grade interactive experiences.",
-    bullets: [
-      "AI Creative Director",
-      "Native VEO video",
-      "WebGL fluid physics",
-      "Audio-reactive UI",
-    ],
+    bullets: ["AI Creative Director", "Native VEO video", "WebGL fluid physics", "Audio-reactive UI"],
     image: web,
     meta: "Web · WebGL · 2025",
   },
@@ -66,25 +51,20 @@ export function Products() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <div className="mb-16 flex flex-col items-start justify-between gap-6 sm:mb-24 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground sm:text-xs">
-              Selected Work
-            </p>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground sm:text-xs">Selected Work</p>
             <h2 className="mt-3 font-display text-4xl tracking-tight sm:mt-4 sm:text-5xl md:text-6xl">
               Three products. <span className="text-brand-gradient italic">One obsession.</span>
             </h2>
           </div>
           <p className="max-w-sm text-sm text-muted-foreground">
-            Each Dextora product is engineered with the same north star: replace the generic with
-            the cinematic, and make state-of-the-art feel inevitable.
+            Each Dextora product is engineered with the same north star: replace the generic with the
+            cinematic, and make state-of-the-art feel inevitable.
           </p>
         </div>
 
         <div className="space-y-24 sm:space-y-40">
           {products.map((p, i) => (
-            <article
-              key={p.name}
-              className="group grid items-center gap-8 sm:gap-12 md:grid-cols-12"
-            >
+            <article key={p.name} className="group grid items-center gap-8 sm:gap-12 md:grid-cols-12">
               {/* Visual */}
               <div className={`relative md:col-span-7 ${i % 2 ? "md:order-2" : ""}`}>
                 <div className="ring-grad relative overflow-hidden rounded-3xl">
@@ -122,22 +102,13 @@ export function Products() {
                   <span>{p.index}</span>
                   <span className="h-px flex-1 bg-border" />
                 </div>
-                <h3 className="mt-5 font-display text-3xl tracking-tight sm:text-4xl md:text-5xl">
-                  {p.name}
-                </h3>
-                <p className="mt-4 text-base text-foreground/90 sm:text-lg md:text-xl">
-                  {p.tagline}
-                </p>
-                <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                  {p.description}
-                </p>
+                <h3 className="mt-5 font-display text-3xl tracking-tight sm:text-4xl md:text-5xl">{p.name}</h3>
+                <p className="mt-4 text-base text-foreground/90 sm:text-lg md:text-xl">{p.tagline}</p>
+                <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
                 <ul className="mt-7 grid grid-cols-2 gap-2.5 text-sm">
                   {p.bullets.map((b) => (
                     <li key={b} className="flex items-center gap-2 text-muted-foreground">
-                      <span
-                        className="h-1 w-1 rounded-full"
-                        style={{ background: "var(--gradient-brand)" }}
-                      />
+                      <span className="h-1 w-1 rounded-full" style={{ background: "var(--gradient-brand)" }} />
                       {b}
                     </li>
                   ))}
@@ -150,12 +121,7 @@ export function Products() {
                     View case study
                     <span className="absolute inset-x-0 -bottom-0.5 h-px origin-left scale-x-100 bg-foreground transition-transform duration-500 group-hover/link:scale-x-0" />
                   </span>
-                  <span
-                    aria-hidden
-                    className="transition-transform duration-300 group-hover/link:translate-x-1"
-                  >
-                    →
-                  </span>
+                  <span aria-hidden className="transition-transform duration-300 group-hover/link:translate-x-1">→</span>
                 </a>
               </div>
             </article>

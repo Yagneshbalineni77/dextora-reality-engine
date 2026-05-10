@@ -20,10 +20,7 @@ export const Route = createFileRoute("/")({
           "Dextora is a creative-tech studio building cinematic AI products: an adaptive learning engine, an AI reel studio, and a 60-second reality-grade website generator.",
       },
       { property: "og:title", content: "Dextora — Cinematic AI Products Studio" },
-      {
-        property: "og:description",
-        content: "Three god-tier AI products. One obsession with the cinematic.",
-      },
+      { property: "og:description", content: "Three god-tier AI products. One obsession with the cinematic." },
       { property: "og:type", content: "website" },
     ],
   }),

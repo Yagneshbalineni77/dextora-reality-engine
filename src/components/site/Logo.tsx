@@ -9,7 +9,11 @@ export function Logo({ className = "" }: { className?: string }) {
           style={{ background: "var(--gradient-brand)" }}
           aria-hidden
         />
-        <img src={logoMark} alt="Dextora" className="relative h-9 w-9 object-contain" />
+        <img
+          src={logoMark}
+          alt="Dextora"
+          className="relative h-9 w-9 object-contain"
+        />
       </span>
       <span className="font-display text-xl tracking-tight">Dextora</span>
     </div>
