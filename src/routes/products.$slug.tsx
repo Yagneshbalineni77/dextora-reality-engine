@@ -93,7 +93,7 @@ function ProductPage() {
         <div className="mx-auto max-w-6xl px-5 sm:px-6">
           <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">Capabilities</p>
           <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-            {p.bullets.map((b) => (
+            {p.bullets.map((b: string) => (
               <div key={b} className="bg-card/70 p-6">
                 <div className="h-1 w-6 rounded-full" style={{ background: "var(--gradient-brand)" }} />
                 <p className="mt-4 text-sm font-medium">{b}</p>
