@@ -10,13 +10,14 @@ export function CopyCheckerCase() {
               Case Study · Copy Checker
             </p>
             <h2 className="mt-3 font-display text-4xl tracking-tight sm:text-5xl md:text-6xl">
-              Months of grading.<br />
+              Months of grading.
+              <br />
               <span className="text-brand-gradient italic">Minutes of intelligence.</span>
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
-              A theory-exam evaluator built for an institution drowning in answer scripts. We replaced
-              a 4-month manual grading cycle with a rubric-aware AI evaluator that reads, scores and
-              explains every answer — at the speed of an API call.
+              A theory-exam evaluator built for an institution drowning in answer scripts. We
+              replaced a 4-month manual grading cycle with a rubric-aware AI evaluator that reads,
+              scores and explains every answer — at the speed of an API call.
             </p>
             <div className="mt-8 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-border bg-border">
               {[
@@ -26,7 +27,9 @@ export function CopyCheckerCase() {
               ].map(([k, v]) => (
                 <div key={v} className="bg-card/70 p-4">
                   <div className="font-display text-2xl text-brand-gradient">{k}</div>
-                  <div className="mt-1 text-[10px] uppercase tracking-widest text-muted-foreground">{v}</div>
+                  <div className="mt-1 text-[10px] uppercase tracking-widest text-muted-foreground">
+                    {v}
+                  </div>
                 </div>
               ))}
             </div>
@@ -89,7 +92,11 @@ function Block({
       className={`relative overflow-hidden rounded-2xl border p-6 ${
         tone === "brand" ? "border-transparent ring-grad" : "border-border bg-card/60"
       }`}
-      style={tone === "brand" ? { background: "color-mix(in oklab, var(--card) 80%, transparent)" } : undefined}
+      style={
+        tone === "brand"
+          ? { background: "color-mix(in oklab, var(--card) 80%, transparent)" }
+          : undefined
+      }
     >
       <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">{tag}</p>
       <h3 className="mt-2 font-display text-xl tracking-tight sm:text-2xl">{title}</h3>

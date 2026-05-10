@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
 
 export function Footer() {
@@ -7,9 +8,15 @@ export function Footer() {
         <Logo />
         <p>© {new Date().getFullYear()} Dextora Labs. Onyx & Frost.</p>
         <div className="flex gap-5">
-          <a href="#products" className="hover:text-foreground">Products</a>
-          <a href="#about" className="hover:text-foreground">Studio</a>
-          <a href="#contact" className="hover:text-foreground">Contact</a>
+          <Link to="/products" className="hover:text-foreground">
+            Products
+          </Link>
+          <Link to="/" hash="about" className="hover:text-foreground">
+            Studio
+          </Link>
+          <Link to="/" hash="contact" className="hover:text-foreground">
+            Contact
+          </Link>
         </div>
       </div>
     </footer>

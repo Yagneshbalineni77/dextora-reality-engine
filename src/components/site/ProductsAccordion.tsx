@@ -13,14 +13,16 @@ export function ProductsAccordion() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6">
         <div className="mb-12 flex flex-col items-start justify-between gap-6 sm:mb-16 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground sm:text-xs">The Portfolio</p>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground sm:text-xs">
+              The Portfolio
+            </p>
             <h2 className="mt-3 font-display text-4xl tracking-tight sm:mt-4 sm:text-5xl md:text-6xl">
               Eleven products. <span className="text-brand-gradient italic">One obsession.</span>
             </h2>
           </div>
           <p className="max-w-sm text-sm text-muted-foreground">
-            Flagship SaaS, enterprise tools, government-grade systems and open-source utilities — all
-            engineered with the same north star.
+            Flagship SaaS, enterprise tools, government-grade systems and open-source utilities —
+            all engineered with the same north star.
           </p>
         </div>
 
@@ -50,7 +52,10 @@ export function ProductsAccordion() {
           {visible.map((p, i) => {
             const isOpen = open === p.slug;
             return (
-              <div key={p.slug} className={`group relative ${i > 0 ? "border-t border-border" : ""}`}>
+              <div
+                key={p.slug}
+                className={`group relative ${i > 0 ? "border-t border-border" : ""}`}
+              >
                 <button
                   onClick={() => setOpen(isOpen ? null : p.slug)}
                   className="flex w-full items-center gap-5 px-5 py-5 text-left transition-colors hover:bg-white/[0.02] sm:px-8 sm:py-7"
@@ -61,7 +66,9 @@ export function ProductsAccordion() {
                   </span>
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                      <h3 className="font-display text-2xl tracking-tight sm:text-3xl md:text-4xl">{p.name}</h3>
+                      <h3 className="font-display text-2xl tracking-tight sm:text-3xl md:text-4xl">
+                        {p.name}
+                      </h3>
                       <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
                         {p.category}
                       </span>
@@ -88,7 +95,10 @@ export function ProductsAccordion() {
                       {/* Visual */}
                       <div className="sm:col-span-7">
                         <div className="ring-grad relative aspect-[16/10] overflow-hidden rounded-2xl">
-                          <div className="absolute inset-0" style={{ background: p.accent, opacity: 0.55 }} />
+                          <div
+                            className="absolute inset-0"
+                            style={{ background: p.accent, opacity: 0.55 }}
+                          />
                           {p.image ? (
                             <img
                               src={p.image}
@@ -112,11 +122,16 @@ export function ProductsAccordion() {
                       {/* Copy */}
                       <div className="sm:col-span-5">
                         <p className="text-base text-foreground/90 sm:text-lg">{p.tagline}</p>
-                        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
+                        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                          {p.description}
+                        </p>
                         <ul className="mt-6 grid grid-cols-2 gap-2.5 text-sm">
                           {p.bullets.map((b) => (
                             <li key={b} className="flex items-center gap-2 text-muted-foreground">
-                              <span className="h-1 w-1 rounded-full" style={{ background: "var(--gradient-brand)" }} />
+                              <span
+                                className="h-1 w-1 rounded-full"
+                                style={{ background: "var(--gradient-brand)" }}
+                              />
                               {b}
                             </li>
                           ))}
@@ -130,7 +145,10 @@ export function ProductsAccordion() {
                             View product
                             <span aria-hidden>→</span>
                           </Link>
-                          <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground">
+                          <a
+                            href="#contact"
+                            className="text-sm text-muted-foreground hover:text-foreground"
+                          >
                             Talk to the team
                           </a>
                         </div>

@@ -1,4 +1,8 @@
+import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "lenis";
 import {
   Outlet,
   Link,
@@ -115,6 +119,25 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+
+    // Sync Lenis scroll with GSAP ScrollTrigger
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+
+    return () => {
+      lenis.destroy();
+      gsap.ticker.remove(lenis.raf as any);
+    };
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
