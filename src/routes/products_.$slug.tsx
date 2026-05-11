@@ -282,24 +282,32 @@ function ProductPage() {
       <section className="pb-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
           <div
-            className="pdp-visual relative aspect-[21/9] overflow-hidden rounded-3xl ring-grad"
+            className="pdp-visual relative flex aspect-[16/10] items-center justify-center overflow-hidden rounded-3xl ring-grad sm:aspect-[21/9]"
             style={{ clipPath: "inset(15% 15% 15% 15% round 24px)" }}
           >
-            <div className="absolute inset-0" style={{ background: p.accent, opacity: 0.7 }} />
+            {/* Cinematic background gradient */}
+            <div className="absolute inset-0" style={{ background: p.accent, opacity: 0.15 }} />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,oklch(0.05_0.01_260/0.9))]" />
+            
             {p.image && (
-              <img
-                src={p.image}
-                alt={p.name}
-                className="absolute inset-0 h-full w-full object-cover mix-blend-overlay"
-              />
+              <div className="relative z-10 h-[85%] sm:h-[80%]">
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  className="h-full w-auto rounded-xl object-contain shadow-2xl transition-transform duration-700 hover:scale-105 sm:rounded-2xl"
+                  style={{
+                    filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.5))",
+                  }}
+                />
+              </div>
             )}
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_50%,transparent_55%,oklch(0.05_0.01_260/0.8))]" />
+            
             {/* Floating category chip */}
-            <div className="absolute left-6 top-6 rounded-full border border-white/15 bg-black/40 px-4 py-1.5 text-[10px] uppercase tracking-[0.25em] text-white/80 backdrop-blur sm:left-8 sm:top-8">
+            <div className="absolute left-6 top-6 z-20 rounded-full border border-white/15 bg-black/40 px-4 py-1.5 text-[10px] uppercase tracking-[0.25em] text-white/80 backdrop-blur sm:left-8 sm:top-8">
               {p.meta}
             </div>
             {/* Massive index */}
-            <div className="absolute bottom-6 right-8 font-display text-8xl text-white/90 mix-blend-overlay sm:bottom-8 sm:right-12 md:text-[10rem]">
+            <div className="absolute bottom-6 right-8 z-0 font-display text-8xl text-white/90 mix-blend-overlay sm:bottom-8 sm:right-12 md:text-[10rem]">
               {p.index}
             </div>
           </div>
@@ -419,20 +427,16 @@ function ProductPage() {
                 The interface <span className="text-brand-gradient italic">unveiled.</span>
               </h2>
             </div>
-
-            <div className="pdp-gallery-scroll flex w-max gap-8 px-5 sm:px-6 md:px-12">
+            
+            <div className="pdp-gallery-scroll flex w-max items-center gap-12 px-5 sm:px-6 md:px-12">
               {p.gallery.map((img, i) => (
-                <div
-                  key={i}
-                  className="relative aspect-[16/10] w-[85vw] max-w-5xl overflow-hidden rounded-2xl ring-grad sm:w-[75vw]"
-                >
-                  <div className="absolute inset-0 bg-card/50" />
+                <div key={i} className="relative h-[65vh] shrink-0">
+                  <div className="absolute inset-0 -z-10 blur-3xl opacity-20 transition-opacity hover:opacity-40" style={{ background: p.accent }} />
                   <img
                     src={img}
                     alt={`${p.name} screenshot ${i + 1}`}
-                    className="h-full w-full object-cover"
+                    className="h-full w-auto rounded-xl border border-white/10 object-contain shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:-translate-y-2 hover:scale-[1.02] sm:rounded-2xl"
                   />
-                  <div className="pointer-events-none absolute inset-0 rounded-2xl border border-white/10" />
                 </div>
               ))}
             </div>
