@@ -6,7 +6,9 @@ import { products } from "@/data/products";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const featuredProducts = products.filter((p) => p.category === "Flagship");
+const featuredProducts = products.filter((p) =>
+  ["learn", "reel-studio", "sites", "copy-checker", "crm"].includes(p.slug)
+);
 
 export function Products() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -120,7 +122,7 @@ export function Products() {
                 Selected Work
               </p>
               <h2 className="mt-3 font-display text-4xl tracking-tight sm:mt-4 sm:text-5xl md:text-6xl">
-                {"Three products. ".split(" ").map((w, i) => (
+                {"Eleven products. ".split(" ").map((w, i) => (
                   <span
                     key={i}
                     className="header-word mr-[0.2em] inline-block"
@@ -130,7 +132,7 @@ export function Products() {
                   </span>
                 ))}
                 <span className="text-brand-gradient italic">
-                  {"One obsession.".split(" ").map((w, i) => (
+                  {"One ecosystem.".split(" ").map((w, i) => (
                     <span
                       key={`b${i}`}
                       className="header-word mr-[0.2em] inline-block"
@@ -211,18 +213,20 @@ function ProductCard({ product: p, index: i }: { product: (typeof products)[0]; 
         />
 
         {/* Image */}
-        <div className="card-image relative overflow-hidden">
+        <div className="card-image relative flex aspect-[16/10] items-center justify-center overflow-hidden">
+          {/* Subtle glow behind image */}
+          <div className="absolute inset-0 opacity-20" style={{ background: p.accent }} />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,oklch(0.05_0.01_260/0.9))]" />
+
           {p.image ? (
             <img
               src={p.image}
               alt={p.name}
               loading="lazy"
-              width={1600}
-              height={1200}
-              className="aspect-[4/3] w-full object-cover transition-transform duration-[1400ms] ease-out hover:scale-[1.04]"
+              className="relative z-10 h-[80%] w-auto rounded-xl object-contain shadow-[0_30px_60px_rgba(0,0,0,0.4)] transition-transform duration-[1400ms] ease-out hover:scale-[1.04]"
             />
           ) : (
-            <div className="aspect-[4/3] w-full" style={{ background: p.accent }} />
+            <div className="relative z-10 h-[80%] w-full rounded-xl" style={{ background: p.accent }} />
           )}
           {/* Cinematic vignette */}
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_50%,transparent_55%,oklch(0.05_0.01_260/0.7))]" />
