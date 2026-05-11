@@ -42,7 +42,7 @@ export const products: Product[] = [
       "14,000+ learners",
     ],
     meta: "EdTech · AI · 2025",
-    image: "/products/dexeducation/main.png",
+    image: edu,
     gallery: [
       "/products/dexeducation/copy-1.png",
       "/products/dexeducation/copy-2.png",
@@ -256,7 +256,6 @@ export const products: Product[] = [
       "Bulk batch grading",
     ],
     meta: "EdTech · AI Evaluator · 2025",
-    image: "/products/copychecker/main.png",
     gallery: [
       "/products/copychecker/copy-1.png",
       "/products/copychecker/copy-2.png",
@@ -333,7 +332,6 @@ export const products: Product[] = [
       "Multi-channel outreach",
     ],
     meta: "Enterprise · SaaS · 2025",
-    image: "/products/crm/main.png",
     accent: "linear-gradient(135deg, oklch(0.6 0.2 250), oklch(0.78 0.12 200))",
     features: [
       {

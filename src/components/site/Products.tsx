@@ -122,7 +122,7 @@ export function Products() {
                 Selected Work
               </p>
               <h2 className="mt-3 font-display text-4xl tracking-tight sm:mt-4 sm:text-5xl md:text-6xl">
-                {"Eleven products. ".split(" ").map((w, i) => (
+                {"A massive ".split(" ").map((w, i) => (
                   <span
                     key={i}
                     className="header-word mr-[0.2em] inline-block"
