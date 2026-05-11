@@ -1,6 +1,15 @@
 import edu from "@/assets/product-education.jpg";
 import reels from "@/assets/product-reels.jpg";
 import web from "@/assets/product-web.jpg";
+import copychecker from "@/assets/product-copy-checker.png";
+import crm from "@/assets/product-crm.png";
+import socialai from "@/assets/product-social-ai.png";
+import iasagent from "@/assets/product-ias-agent.png";
+import aiglasses from "@/assets/product-ai-glasses.png";
+import notetaker from "@/assets/product-note-taker.png";
+import office3d from "@/assets/product-office-3d.png";
+import interviewanalysis from "@/assets/product-interview-analysis.png";
+
 
 export type ProductCategory = "Flagship" | "Government" | "Enterprise" | "Open Source";
 
@@ -256,6 +265,7 @@ export const products: Product[] = [
       "Bulk batch grading",
     ],
     meta: "EdTech · AI Evaluator · 2025",
+    image: copychecker,
     gallery: [
       "/products/copychecker/copy-1.png",
       "/products/copychecker/copy-2.png",
@@ -332,6 +342,7 @@ export const products: Product[] = [
       "Multi-channel outreach",
     ],
     meta: "Enterprise · SaaS · 2025",
+    image: crm,
     accent: "linear-gradient(135deg, oklch(0.6 0.2 250), oklch(0.78 0.12 200))",
     features: [
       {
@@ -400,6 +411,7 @@ export const products: Product[] = [
       "Weekly insights digest",
     ],
     meta: "Marketing · Automation · 2025",
+    image: socialai,
     accent: "linear-gradient(135deg, oklch(0.7 0.18 30), oklch(0.65 0.2 320))",
     features: [
       {
@@ -470,6 +482,7 @@ export const products: Product[] = [
       "Air-gapped deployment",
     ],
     meta: "GovTech · Secure AI · 2025",
+    image: iasagent,
     accent: "linear-gradient(135deg, oklch(0.5 0.16 260), oklch(0.7 0.12 220))",
     features: [
       {
@@ -538,6 +551,7 @@ export const products: Product[] = [
       "Tactical privacy mode",
     ],
     meta: "Hardware · Wearable AI · 2025",
+    image: aiglasses,
     accent: "linear-gradient(135deg, oklch(0.62 0.22 295), oklch(0.6 0.2 250))",
     features: [
       {
@@ -608,6 +622,7 @@ export const products: Product[] = [
       "Self-hostable",
     ],
     meta: "Open Source · Productivity · 2025",
+    image: notetaker,
     accent: "linear-gradient(135deg, oklch(0.78 0.12 200), oklch(0.68 0.18 150))",
     features: [
       {
@@ -671,6 +686,7 @@ export const products: Product[] = [
       "Walk into a real-time 3D office. Proximity voice, shared whiteboards, focus rooms. Built on open WebGL stack, deployable on your domain.",
     bullets: ["Proximity voice", "Shared whiteboards", "Focus rooms", "Self-hostable"],
     meta: "Open Source · Spatial · 2025",
+    image: office3d,
     accent: "linear-gradient(135deg, oklch(0.65 0.2 320), oklch(0.62 0.22 295))",
     features: [
       {
@@ -739,6 +755,7 @@ export const products: Product[] = [
       "Explainable rubrics",
     ],
     meta: "Open Source · HR Tech · 2025",
+    image: interviewanalysis,
     accent: "linear-gradient(135deg, oklch(0.7 0.15 200), oklch(0.78 0.12 200))",
     features: [
       {
