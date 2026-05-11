@@ -180,6 +180,24 @@ function ProductPage() {
           },
         },
       );
+
+      // Gallery scroll
+      const galleryWrapper = document.querySelector(".pdp-gallery-wrapper");
+      const galleryScroll = document.querySelector(".pdp-gallery-scroll");
+      if (galleryWrapper && galleryScroll) {
+        gsap.to(galleryScroll, {
+          x: () => -(galleryScroll.scrollWidth - window.innerWidth),
+          ease: "none",
+          scrollTrigger: {
+            trigger: galleryWrapper,
+            start: "top top",
+            end: () => `+=${galleryScroll.scrollWidth - window.innerWidth}`,
+            scrub: 1,
+            pin: true,
+            invalidateOnRefresh: true,
+          },
+        });
+      }
     });
 
     return () => ctx.revert();
@@ -388,6 +406,39 @@ function ProductPage() {
           </div>
         </div>
       </section>
+
+      {/* ━━━ GALLERY ━━━ */}
+      {p.gallery && p.gallery.length > 0 && (
+        <section className="pdp-gallery-wrapper relative h-screen bg-background">
+          <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden">
+            <div className="mx-auto mb-8 w-full max-w-6xl px-5 sm:px-6">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground sm:text-xs">
+                In Action
+              </p>
+              <h2 className="mt-3 font-display text-3xl tracking-tight sm:text-4xl md:text-5xl">
+                The interface <span className="text-brand-gradient italic">unveiled.</span>
+              </h2>
+            </div>
+
+            <div className="pdp-gallery-scroll flex w-max gap-8 px-5 sm:px-6 md:px-12">
+              {p.gallery.map((img, i) => (
+                <div
+                  key={i}
+                  className="relative aspect-[16/10] w-[85vw] max-w-5xl overflow-hidden rounded-2xl ring-grad sm:w-[75vw]"
+                >
+                  <div className="absolute inset-0 bg-card/50" />
+                  <img
+                    src={img}
+                    alt={`${p.name} screenshot ${i + 1}`}
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="pointer-events-none absolute inset-0 rounded-2xl border border-white/10" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ━━━ CTA ━━━ */}
       <section className="pb-32">

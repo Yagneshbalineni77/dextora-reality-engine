@@ -17,6 +17,7 @@ export type Product = {
   bullets: string[];
   meta: string;
   image?: string;
+  gallery?: string[];
   accent: string;
   features: Feature[];
   process: ProcessStep[];
@@ -41,7 +42,14 @@ export const products: Product[] = [
       "14,000+ learners",
     ],
     meta: "EdTech · AI · 2025",
-    image: edu,
+    image: "/products/dexeducation/main.png",
+    gallery: [
+      "/products/dexeducation/copy-1.png",
+      "/products/dexeducation/copy-2.png",
+      "/products/dexeducation/copy-3.png",
+      "/products/dexeducation/copy-4.png",
+      "/products/dexeducation/copy-5.png",
+    ],
     accent: "linear-gradient(135deg, oklch(0.62 0.22 295), oklch(0.78 0.12 200))",
     features: [
       {
@@ -248,6 +256,13 @@ export const products: Product[] = [
       "Bulk batch grading",
     ],
     meta: "EdTech · AI Evaluator · 2025",
+    image: "/products/copychecker/main.png",
+    gallery: [
+      "/products/copychecker/copy-1.png",
+      "/products/copychecker/copy-2.png",
+      "/products/copychecker/copy-3.png",
+      "/products/copychecker/copy-4.png",
+    ],
     accent: "linear-gradient(135deg, oklch(0.68 0.18 150), oklch(0.62 0.22 295))",
     features: [
       {
@@ -318,6 +333,7 @@ export const products: Product[] = [
       "Multi-channel outreach",
     ],
     meta: "Enterprise · SaaS · 2025",
+    image: "/products/crm/main.png",
     accent: "linear-gradient(135deg, oklch(0.6 0.2 250), oklch(0.78 0.12 200))",
     features: [
       {
