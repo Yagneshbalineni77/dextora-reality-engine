@@ -185,17 +185,28 @@ function ProductPage() {
       const galleryWrapper = document.querySelector(".pdp-gallery-wrapper");
       const galleryScroll = document.querySelector(".pdp-gallery-scroll");
       if (galleryWrapper && galleryScroll) {
-        gsap.to(galleryScroll, {
-          x: () => -(galleryScroll.scrollWidth - window.innerWidth),
+        const getScrollAmount = () => -(galleryScroll.scrollWidth - window.innerWidth);
+        const tween = gsap.to(galleryScroll, {
+          x: getScrollAmount,
           ease: "none",
-          scrollTrigger: {
-            trigger: galleryWrapper,
-            start: "top top",
-            end: () => `+=${galleryScroll.scrollWidth - window.innerWidth}`,
-            scrub: 1,
-            pin: true,
-            invalidateOnRefresh: true,
-          },
+        });
+
+        ScrollTrigger.create({
+          trigger: galleryWrapper,
+          start: "top top",
+          end: () => `+=${getScrollAmount() * -1}`,
+          pin: true,
+          animation: tween,
+          scrub: 1,
+          invalidateOnRefresh: true,
+        });
+
+        // Ensure refresh happens after images load to fix scroll width
+        const imgs = galleryScroll.querySelectorAll("img");
+        imgs.forEach((img) => {
+          if (!img.complete) {
+            img.addEventListener("load", () => ScrollTrigger.refresh());
+          }
         });
       }
     });
@@ -428,7 +439,7 @@ function ProductPage() {
               </h2>
             </div>
             
-            <div className="pdp-gallery-scroll flex w-max items-center gap-12 px-5 sm:px-6 md:px-12">
+            <div className="pdp-gallery-scroll flex w-max items-center gap-12 px-5 sm:px-6 md:px-12 after:block after:w-[10vw] after:shrink-0">
               {p.gallery.map((img, i) => (
                 <div key={i} className="relative h-[65vh] shrink-0">
                   <div className="absolute inset-0 -z-10 blur-3xl opacity-20 transition-opacity hover:opacity-40" style={{ background: p.accent }} />
