@@ -325,11 +325,80 @@ export const products: Product[] = [
       ["40x", "Faster than manual"],
     ],
   },
+  {
+    slug: "ai-glasses",
+    index: "05",
+    name: "Dextora AI Glasses",
+    category: "Flagship",
+    tagline: "Heads-up intelligence for field officers.",
+    description:
+      "Live transcription, translation, face & document recognition with on-device safety filters. Designed for inspections, field ops and citizen interfacing.",
+    bullets: [
+      "Live transcription",
+      "On-device translation",
+      "Document recognition",
+      "Tactical privacy mode",
+    ],
+    meta: "Hardware · Wearable AI · 2025",
+    image: aiglasses,
+    accent: "linear-gradient(135deg, oklch(0.62 0.22 295), oklch(0.6 0.2 250))",
+    features: [
+      {
+        title: "Live Transcription",
+        desc: "Real-time speech-to-text displayed on the HUD. Every conversation documented automatically.",
+        icon: "🎤",
+      },
+      {
+        title: "On-Device Translation",
+        desc: "Instant translation across 22 Indian languages. No internet required. Works in remote field locations.",
+        icon: "🌍",
+      },
+      {
+        title: "Document Recognition",
+        desc: "Point at any document — Aadhaar, license, permit. AI extracts and verifies data in real-time.",
+        icon: "📑",
+      },
+      {
+        title: "Tactical Privacy Mode",
+        desc: "One tap to disable all recording. Hardware kill switch for camera and mic. Full officer control.",
+        icon: "🛡️",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Wear",
+        desc: "Lightweight titanium frames with integrated micro-display and bone conduction audio.",
+      },
+      {
+        step: "02",
+        title: "See",
+        desc: "AI overlays real-time intelligence on the officer's field of view.",
+      },
+      {
+        step: "03",
+        title: "Act",
+        desc: "Voice commands trigger document scans, translations, and status checks.",
+      },
+      {
+        step: "04",
+        title: "Report",
+        desc: "Auto-generated field report with timestamps, locations, and evidence logs.",
+      },
+    ],
+    techStack: ["Android AOSP", "MediaPipe", "TFLite", "Qualcomm QCS", "BLE 5.3", "Custom PCB"],
+    stats: [
+      ["22", "Languages supported"],
+      ["50ms", "Translation latency"],
+      ["12hr", "Battery life"],
+      ["42g", "Total weight"],
+    ],
+  },
 
   // ───────── Enterprise ─────────
   {
     slug: "crm",
-    index: "05",
+    index: "06",
     name: "Dextora CRM",
     category: "Enterprise",
     tagline: "An AI-native CRM for high-velocity sales teams.",
@@ -398,7 +467,7 @@ export const products: Product[] = [
   },
   {
     slug: "social-ai",
-    index: "06",
+    index: "07",
     name: "Social Media Management AI",
     category: "Enterprise",
     tagline: "An autonomous social desk that posts, replies and reports.",
@@ -469,7 +538,7 @@ export const products: Product[] = [
   // ───────── Government ─────────
   {
     slug: "ias-agent",
-    index: "07",
+    index: "08",
     name: "Personal AI Agent for IAS Officers",
     category: "Government",
     tagline: "A private, secure agentic copilot for senior bureaucrats.",
@@ -536,75 +605,7 @@ export const products: Product[] = [
       ["Zero", "Cloud dependency"],
     ],
   },
-  {
-    slug: "ai-glasses",
-    index: "08",
-    name: "Dextora AI Glasses",
-    category: "Government",
-    tagline: "Heads-up intelligence for field officers.",
-    description:
-      "Live transcription, translation, face & document recognition with on-device safety filters. Designed for inspections, field ops and citizen interfacing.",
-    bullets: [
-      "Live transcription",
-      "On-device translation",
-      "Document recognition",
-      "Tactical privacy mode",
-    ],
-    meta: "Hardware · Wearable AI · 2025",
-    image: aiglasses,
-    accent: "linear-gradient(135deg, oklch(0.62 0.22 295), oklch(0.6 0.2 250))",
-    features: [
-      {
-        title: "Live Transcription",
-        desc: "Real-time speech-to-text displayed on the HUD. Every conversation documented automatically.",
-        icon: "🎤",
-      },
-      {
-        title: "On-Device Translation",
-        desc: "Instant translation across 22 Indian languages. No internet required. Works in remote field locations.",
-        icon: "🌍",
-      },
-      {
-        title: "Document Recognition",
-        desc: "Point at any document — Aadhaar, license, permit. AI extracts and verifies data in real-time.",
-        icon: "📑",
-      },
-      {
-        title: "Tactical Privacy Mode",
-        desc: "One tap to disable all recording. Hardware kill switch for camera and mic. Full officer control.",
-        icon: "🛡️",
-      },
-    ],
-    process: [
-      {
-        step: "01",
-        title: "Wear",
-        desc: "Lightweight titanium frames with integrated micro-display and bone conduction audio.",
-      },
-      {
-        step: "02",
-        title: "See",
-        desc: "AI overlays real-time intelligence on the officer's field of view.",
-      },
-      {
-        step: "03",
-        title: "Act",
-        desc: "Voice commands trigger document scans, translations, and status checks.",
-      },
-      {
-        step: "04",
-        title: "Report",
-        desc: "Auto-generated field report with timestamps, locations, and evidence logs.",
-      },
-    ],
-    techStack: ["Android AOSP", "MediaPipe", "TFLite", "Qualcomm QCS", "BLE 5.3", "Custom PCB"],
-    stats: [
-      ["22", "Languages supported"],
-      ["50ms", "Translation latency"],
-      ["12hr", "Battery life"],
-      ["42g", "Total weight"],
-    ],
-  },
+
   {
     slug: "foresight",
     index: "09",
