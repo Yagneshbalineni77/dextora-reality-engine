@@ -45,7 +45,7 @@ export const Route = createFileRoute("/products_/$slug")({
 });
 
 function ProductPage() {
-  const { product: p } = Route.useLoaderData();
+  const { product: p } = Route.useLoaderData() as { product: import("@/data/products").Product };
   const idx = products.findIndex((x) => x.slug === p.slug);
   const next = products[(idx + 1) % products.length];
   const prev = products[(idx - 1 + products.length) % products.length];
