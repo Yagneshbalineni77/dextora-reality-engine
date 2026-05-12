@@ -122,7 +122,7 @@ export function Products() {
                 Selected Work
               </p>
               <h2 className="mt-3 font-display text-4xl tracking-tight sm:mt-4 sm:text-5xl md:text-6xl">
-                {"A massive ".split(" ").map((w, i) => (
+                {"Explore our ".split(" ").map((w, i) => (
                   <span
                     key={i}
                     className="header-word mr-[0.2em] inline-block"
@@ -131,17 +131,20 @@ export function Products() {
                     {w}
                   </span>
                 ))}
-                <span className="text-brand-gradient italic">
-                  {"One ecosystem.".split(" ").map((w, i) => (
-                    <span
-                      key={`b${i}`}
-                      className="header-word mr-[0.2em] inline-block"
-                      style={{ opacity: 0 }}
-                    >
-                      {w}
-                    </span>
-                  ))}
-                </span>
+                <Link to="/products/" className="group relative inline-block">
+                  <span className="text-brand-gradient italic">
+                    {"full portfolio.".split(" ").map((w, i) => (
+                      <span
+                        key={`b${i}`}
+                        className="header-word mr-[0.2em] inline-block"
+                        style={{ opacity: 0 }}
+                      >
+                        {w}
+                      </span>
+                    ))}
+                  </span>
+                  <span className="absolute -bottom-2 left-0 h-[2px] w-full origin-left scale-x-0 bg-gradient-to-r from-[oklch(0.62_0.22_295)] to-transparent transition-transform duration-500 ease-out group-hover:scale-x-100" />
+                </Link>
               </h2>
             </div>
             <p
