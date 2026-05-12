@@ -124,25 +124,6 @@ function ProductPage() {
         },
       );
 
-      // Tech stack pills
-      gsap.fromTo(
-        ".tech-pill",
-        { opacity: 0, scale: 0.7, y: 20 },
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          duration: 0.5,
-          stagger: 0.06,
-          ease: "back.out(1.7)",
-          scrollTrigger: {
-            trigger: ".tech-section",
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        },
-      );
-
       // Stats count up
       const statEls = document.querySelectorAll(".pdp-stat-val");
       statEls.forEach((el) => {
@@ -398,29 +379,6 @@ function ProductPage() {
                   style={{ background: p.accent }}
                 />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ━━━ TECH STACK ━━━ */}
-      <section className="tech-section pb-24">
-        <div className="mx-auto max-w-6xl px-5 sm:px-6">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground sm:text-xs">
-            Built With
-          </p>
-          <h2 className="mt-3 font-display text-3xl tracking-tight sm:text-4xl">
-            The stack behind <span className="text-brand-gradient italic">{p.name}.</span>
-          </h2>
-          <div className="mt-8 flex flex-wrap gap-3">
-            {p.techStack.map((tech) => (
-              <span
-                key={tech}
-                className="tech-pill rounded-full border border-border bg-card/60 px-5 py-2.5 text-sm font-medium backdrop-blur transition-all duration-300 hover:border-foreground/30 hover:bg-card"
-                style={{ opacity: 0 }}
-              >
-                {tech}
-              </span>
             ))}
           </div>
         </div>
