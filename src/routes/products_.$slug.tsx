@@ -412,6 +412,31 @@ function ProductPage() {
           </div>
         </section>
       )}
+      {/* ━━━ VIDEO ━━━ */}
+      {p.video && (
+        <section className="relative pb-24">
+          <div className="mx-auto max-w-6xl px-5 sm:px-6">
+            <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground sm:text-xs">
+              Demonstration
+            </p>
+            <h2 className="mt-3 font-display text-3xl tracking-tight sm:text-4xl md:text-5xl mb-12">
+              See it <span className="text-brand-gradient italic">in action.</span>
+            </h2>
+            <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] sm:rounded-2xl">
+              <div className="absolute inset-0 -z-10 blur-3xl opacity-20" style={{ background: p.accent }} />
+              <video
+                src={p.video}
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ━━━ CTA ━━━ */}
       <section className="pb-32">

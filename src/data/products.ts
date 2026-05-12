@@ -28,6 +28,7 @@ export type Product = {
   meta: string;
   image?: string;
   gallery?: string[];
+  video?: string;
   accent: string;
   features: Feature[];
   process: ProcessStep[];
@@ -692,6 +693,13 @@ export const products: Product[] = [
     ],
     meta: "GovTech · Simulation AI · 2025",
     image: foresight,
+    gallery: [
+      "/products/foresight/gallery-1.png",
+      "/products/foresight/gallery-2.png",
+      "/products/foresight/gallery-3.png",
+      "/products/foresight/gallery-4.png",
+    ],
+    video: "/products/foresight/video.mp4",
     accent: "linear-gradient(135deg, oklch(0.6 0.25 240), oklch(0.8 0.15 80))",
     features: [
       {
