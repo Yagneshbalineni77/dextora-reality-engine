@@ -10,6 +10,7 @@ import notetaker from "@/assets/product-note-taker.png";
 import office3d from "@/assets/product-office-3d.png";
 import interviewanalysis from "@/assets/product-interview-analysis.png";
 import foresight from "@/assets/product-foresight.png";
+import newsengine from "@/assets/product-news-engine.png";
 
 export type ProductCategory = "Flagship" | "Government" | "Enterprise" | "Platform";
 
@@ -534,11 +535,80 @@ export const products: Product[] = [
       ["15h", "Saved per week"],
     ],
   },
+  {
+    slug: "broadcast",
+    index: "08",
+    name: "Dextora Broadcast",
+    category: "Enterprise",
+    tagline: "AI-powered global news engine and autonomous broadcasting.",
+    description:
+      "A complete AI newsroom built for tier-1 channels. Ingests global data feeds, auto-generates breaking news scripts, and powers live transparent broadcasts with highly realistic AI anchors.",
+    bullets: [
+      "Live data ingestion",
+      "Auto-scripting engine",
+      "AI anchor generation",
+      "Real-time translation",
+    ],
+    meta: "MediaTech · Broadcasting AI · 2025",
+    image: newsengine,
+    accent: "linear-gradient(135deg, oklch(0.65 0.25 310), oklch(0.8 0.15 200))",
+    features: [
+      {
+        title: "Live Data Ingestion",
+        desc: "Hooks into thousands of verified global news feeds, stock tickers, and social media streams in real-time.",
+        icon: "📡",
+      },
+      {
+        title: "Auto-Scripting Engine",
+        desc: "Transforms raw breaking news facts into broadcast-ready, tonally-perfect scripts in under 5 seconds.",
+        icon: "✍️",
+      },
+      {
+        title: "AI Anchor Generation",
+        desc: "Deploy photorealistic digital anchors that can read scripts fluently with proper inflections and emotion.",
+        icon: "🎙️",
+      },
+      {
+        title: "Real-Time Translation",
+        desc: "Simulcast a single broadcast into 40+ languages instantly, fully lip-synced for regional audiences.",
+        icon: "🌍",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Ingest",
+        desc: "The engine continuously monitors global feeds for breaking news and verified updates.",
+      },
+      {
+        step: "02",
+        title: "Draft",
+        desc: "AI automatically writes a broadcast script and formats accompanying visual graphics.",
+      },
+      {
+        step: "03",
+        title: "Render",
+        desc: "Digital anchors are generated dynamically to deliver the news in real-time.",
+      },
+      {
+        step: "04",
+        title: "Broadcast",
+        desc: "The feed is pushed live to television networks, streaming platforms, and social media.",
+      },
+    ],
+    techStack: ["React", "WebRTC", "OpenAI Sora", "Whisper", "Unreal Engine", "AWS Elemental"],
+    stats: [
+      ["40+", "Languages supported"],
+      ["< 5s", "Script generation"],
+      ["24/7", "Autonomous broadcast"],
+      ["0", "Human anchors needed"],
+    ],
+  },
 
   // ───────── Government ─────────
   {
     slug: "ias-agent",
-    index: "08",
+    index: "09",
     name: "Personal AI Agent for IAS Officers",
     category: "Government",
     tagline: "A private, secure agentic copilot for senior bureaucrats.",
@@ -608,7 +678,7 @@ export const products: Product[] = [
 
   {
     slug: "foresight",
-    index: "09",
+    index: "10",
     name: "Dextora Foresight",
     category: "Government",
     tagline: "AI prediction engine with 1 million simulated agents.",
@@ -679,7 +749,7 @@ export const products: Product[] = [
   // ───────── Platform ─────────
   {
     slug: "interview-analysis",
-    index: "10",
+    index: "11",
     name: "Interview Analysis",
     category: "Platform",
     tagline: "Structured signals from every candidate conversation.",
