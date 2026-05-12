@@ -398,16 +398,46 @@ function ProductPage() {
             </div>
             
             <div className="pdp-gallery-scroll flex w-max items-center gap-12 px-5 sm:px-6 md:px-12 after:block after:w-[10vw] after:shrink-0">
-              {p.gallery.map((img, i) => (
-                <div key={i} className="relative h-[65vh] shrink-0">
-                  <div className="absolute inset-0 -z-10 blur-3xl opacity-20 transition-opacity hover:opacity-40" style={{ background: p.accent }} />
-                  <img
-                    src={img}
-                    alt={`${p.name} screenshot ${i + 1}`}
-                    className="h-full w-auto rounded-xl border border-white/10 object-contain shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:-translate-y-2 hover:scale-[1.02] sm:rounded-2xl"
-                  />
-                </div>
-              ))}
+              {p.gallery.map((img, i) => {
+                const isForesightStack = p.slug === "foresight" && p.gallery!.length >= 4;
+
+                // Skip the 3rd image because it gets rendered inside the 2nd image's column
+                if (isForesightStack && i === 2) return null;
+
+                if (isForesightStack && i === 1) {
+                  return (
+                    <div key={i} className="flex flex-col gap-6 h-[65vh] shrink-0 justify-between">
+                      <div className="relative h-[calc(32.5vh-0.75rem)] shrink-0">
+                        <div className="absolute inset-0 -z-10 blur-3xl opacity-20 transition-opacity hover:opacity-40" style={{ background: p.accent }} />
+                        <img
+                          src={p.gallery![1]}
+                          alt={`${p.name} screenshot 2`}
+                          className="h-full w-auto rounded-xl border border-white/10 object-contain shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:-translate-y-2 hover:scale-[1.02] sm:rounded-2xl"
+                        />
+                      </div>
+                      <div className="relative h-[calc(32.5vh-0.75rem)] shrink-0">
+                        <div className="absolute inset-0 -z-10 blur-3xl opacity-20 transition-opacity hover:opacity-40" style={{ background: p.accent }} />
+                        <img
+                          src={p.gallery![2]}
+                          alt={`${p.name} screenshot 3`}
+                          className="h-full w-auto rounded-xl border border-white/10 object-contain shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:-translate-y-2 hover:scale-[1.02] sm:rounded-2xl"
+                        />
+                      </div>
+                    </div>
+                  );
+                }
+
+                return (
+                  <div key={i} className="relative h-[65vh] shrink-0">
+                    <div className="absolute inset-0 -z-10 blur-3xl opacity-20 transition-opacity hover:opacity-40" style={{ background: p.accent }} />
+                    <img
+                      src={img}
+                      alt={`${p.name} screenshot ${i + 1}`}
+                      className="h-full w-auto rounded-xl border border-white/10 object-contain shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:-translate-y-2 hover:scale-[1.02] sm:rounded-2xl"
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
