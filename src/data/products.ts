@@ -9,7 +9,7 @@ import aiglasses from "@/assets/product-ai-glasses.png";
 import notetaker from "@/assets/product-note-taker.png";
 import office3d from "@/assets/product-office-3d.png";
 import interviewanalysis from "@/assets/product-interview-analysis.png";
-
+import foresight from "@/assets/product-foresight.png";
 
 export type ProductCategory = "Flagship" | "Government" | "Enterprise" | "Platform";
 
@@ -605,144 +605,80 @@ export const products: Product[] = [
       ["42g", "Total weight"],
     ],
   },
+  {
+    slug: "foresight",
+    index: "09",
+    name: "Dextora Foresight",
+    category: "Government",
+    tagline: "AI prediction engine with 1 million simulated agents.",
+    description:
+      "Input a scenario or news event, and Foresight runs millions of simulated AI agents with designed personas to predict outcomes, behavioral shifts, and systemic risks.",
+    bullets: [
+      "1 million agent simulation",
+      "Scenario prediction",
+      "Designed personas",
+      "Systemic risk analysis",
+    ],
+    meta: "GovTech · Simulation AI · 2025",
+    image: foresight,
+    accent: "linear-gradient(135deg, oklch(0.6 0.25 240), oklch(0.8 0.15 80))",
+    features: [
+      {
+        title: "Millions of Agents",
+        desc: "Simulate massive populations. Each agent has unique demographic, psychographic, and behavioral traits.",
+        icon: "🧠",
+      },
+      {
+        title: "Scenario Injection",
+        desc: "Feed breaking news, policy changes, or economic shifts to observe immediate macro-level reactions.",
+        icon: "🌍",
+      },
+      {
+        title: "Persona Design",
+        desc: "Create bespoke population cohorts to test targeted policies and analyze localized impact.",
+        icon: "🎭",
+      },
+      {
+        title: "Outcome Prediction",
+        desc: "Generates high-confidence probability reports for cascading events and systemic risks.",
+        icon: "📈",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Define",
+        desc: "Set the parameters of the population and generate the millions of AI agent personas.",
+      },
+      {
+        step: "02",
+        title: "Inject",
+        desc: "Introduce a variable: a new tax law, a global event, or a targeted disinformation campaign.",
+      },
+      {
+        step: "03",
+        title: "Simulate",
+        desc: "Run the scenario over thousands of epochs to observe interaction and behavioral shifts.",
+      },
+      {
+        step: "04",
+        title: "Predict",
+        desc: "Foresight outputs comprehensive predictive reports highlighting the most probable outcomes.",
+      },
+    ],
+    techStack: ["Python", "Rust", "Ray", "LLaMA 3", "PostgreSQL", "NVIDIA H100 Cluster"],
+    stats: [
+      ["1M+", "Concurrent agents"],
+      ["< 5min", "Simulation run"],
+      ["92%", "Predictive accuracy"],
+      ["∞", "Scenarios tested"],
+    ],
+  },
 
   // ───────── Platform ─────────
   {
-    slug: "note-taker",
-    index: "09",
-    name: "Dextora Note-taker",
-    category: "Platform",
-    tagline: "Meeting copilot built on open-source ASR + LLMs.",
-    description:
-      "Joins your calls, captures speaker-attributed transcripts, generates structured notes, action items and follow-up emails. Self-hostable.",
-    bullets: [
-      "Speaker-attributed transcripts",
-      "Auto action items",
-      "Follow-up email drafts",
-      "Self-hostable",
-    ],
-    meta: "Platform · Productivity · 2025",
-    image: notetaker,
-    accent: "linear-gradient(135deg, oklch(0.78 0.12 200), oklch(0.68 0.18 150))",
-    features: [
-      {
-        title: "Speaker Attribution",
-        desc: "Knows who said what. Color-coded transcripts with speaker labels and confidence scores.",
-        icon: "👥",
-      },
-      {
-        title: "Smart Summaries",
-        desc: "Not just a transcript dump. AI extracts decisions, blockers, action items, and deadlines.",
-        icon: "📋",
-      },
-      {
-        title: "Follow-Up Drafts",
-        desc: "Auto-generates follow-up emails with meeting summary and assigned action items per person.",
-        icon: "✉️",
-      },
-      {
-        title: "Self-Hostable",
-        desc: "Run it on your own infrastructure. Your conversations never leave your servers.",
-        icon: "🏠",
-      },
-    ],
-    process: [
-      {
-        step: "01",
-        title: "Join",
-        desc: "Bot joins your Zoom/Meet/Teams call with one click or calendar integration.",
-      },
-      {
-        step: "02",
-        title: "Listen",
-        desc: "Real-time transcription with speaker diarization and noise cancellation.",
-      },
-      {
-        step: "03",
-        title: "Analyze",
-        desc: "AI processes transcript into structured notes, decisions, and action items.",
-      },
-      {
-        step: "04",
-        title: "Distribute",
-        desc: "Notes and follow-ups auto-sent to attendees within 2 minutes of call end.",
-      },
-    ],
-    techStack: ["Python", "Whisper", "Pyannote", "Ollama", "FastAPI", "Docker"],
-    stats: [
-      ["95%", "Transcription accuracy"],
-      ["2min", "Post-call delivery"],
-      ["0", "Data sent to cloud"],
-      ["100%", "Platform"],
-    ],
-  },
-  {
-    slug: "office-3d",
-    index: "10",
-    name: "Office 3D",
-    category: "Platform",
-    tagline: "A spatial workspace for distributed teams.",
-    description:
-      "Walk into a real-time 3D office. Proximity voice, shared whiteboards, focus rooms. Built on open WebGL stack, deployable on your domain.",
-    bullets: ["Proximity voice", "Shared whiteboards", "Focus rooms", "Self-hostable"],
-    meta: "Platform · Spatial · 2025",
-    image: office3d,
-    accent: "linear-gradient(135deg, oklch(0.65 0.2 320), oklch(0.62 0.22 295))",
-    features: [
-      {
-        title: "Proximity Voice",
-        desc: "Audio volume scales with distance. Walk closer to talk. Walk away to focus. Just like a real office.",
-        icon: "🔊",
-      },
-      {
-        title: "Shared Whiteboards",
-        desc: "Collaborative infinite canvas boards in every room. Draw, diagram, and sticky-note together in real-time.",
-        icon: "🖍️",
-      },
-      {
-        title: "Focus Rooms",
-        desc: "Enter a focus room and your status auto-updates. No interruptions. Deep work mode, enforced by space.",
-        icon: "🧘",
-      },
-      {
-        title: "Custom Spaces",
-        desc: "Design your own office layout. Upload floor plans. Brand the space. Make it feel like yours.",
-        icon: "🏗️",
-      },
-    ],
-    process: [
-      {
-        step: "01",
-        title: "Deploy",
-        desc: "Self-host on your domain or use our managed instance. Docker one-liner.",
-      },
-      {
-        step: "02",
-        title: "Design",
-        desc: "Customize your virtual office layout with drag-and-drop room builder.",
-      },
-      {
-        step: "03",
-        title: "Inhabit",
-        desc: "Team members join as avatars. Walk, talk, and collaborate spatially.",
-      },
-      {
-        step: "04",
-        title: "Integrate",
-        desc: "Connect Slack, Calendar, and project tools for seamless workflow.",
-      },
-    ],
-    techStack: ["Three.js", "WebRTC", "Socket.io", "React", "Mediasoup", "Docker"],
-    stats: [
-      ["< 100ms", "Voice latency"],
-      ["50+", "Concurrent users"],
-      ["24/7", "Persistent spaces"],
-      ["0", "Vendor lock-in"],
-    ],
-  },
-  {
     slug: "interview-analysis",
-    index: "11",
+    index: "10",
     name: "Interview Analysis",
     category: "Platform",
     tagline: "Structured signals from every candidate conversation.",
