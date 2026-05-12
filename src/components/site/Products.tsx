@@ -131,8 +131,8 @@ export function Products() {
                     {w}
                   </span>
                 ))}
-                <Link to="/products/" className="group relative inline-block">
-                  <span className="text-brand-gradient italic">
+                <Link to="/products/" className="group relative inline-block ml-1">
+                  <span className="italic text-white">
                     {"full portfolio.".split(" ").map((w, i) => (
                       <span
                         key={`b${i}`}
@@ -143,7 +143,7 @@ export function Products() {
                       </span>
                     ))}
                   </span>
-                  <span className="absolute -bottom-2 left-0 h-[2px] w-full origin-left scale-x-0 bg-gradient-to-r from-[oklch(0.62_0.22_295)] to-transparent transition-transform duration-500 ease-out group-hover:scale-x-100" />
+                  <span className="absolute -bottom-2 left-0 h-[2px] w-full origin-left scale-x-0 bg-white transition-transform duration-500 ease-out group-hover:scale-x-100" />
                 </Link>
               </h2>
             </div>

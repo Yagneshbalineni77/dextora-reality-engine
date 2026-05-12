@@ -11,7 +11,7 @@ import office3d from "@/assets/product-office-3d.png";
 import interviewanalysis from "@/assets/product-interview-analysis.png";
 
 
-export type ProductCategory = "Flagship" | "Government" | "Enterprise" | "Open Source";
+export type ProductCategory = "Flagship" | "Government" | "Enterprise" | "Platform";
 
 export type Feature = { title: string; desc: string; icon: string };
 export type ProcessStep = { step: string; title: string; desc: string };
@@ -606,12 +606,12 @@ export const products: Product[] = [
     ],
   },
 
-  // ───────── Open Source ─────────
+  // ───────── Platform ─────────
   {
     slug: "note-taker",
     index: "09",
     name: "Dextora Note-taker",
-    category: "Open Source",
+    category: "Platform",
     tagline: "Meeting copilot built on open-source ASR + LLMs.",
     description:
       "Joins your calls, captures speaker-attributed transcripts, generates structured notes, action items and follow-up emails. Self-hostable.",
@@ -621,7 +621,7 @@ export const products: Product[] = [
       "Follow-up email drafts",
       "Self-hostable",
     ],
-    meta: "Open Source · Productivity · 2025",
+    meta: "Platform · Productivity · 2025",
     image: notetaker,
     accent: "linear-gradient(135deg, oklch(0.78 0.12 200), oklch(0.68 0.18 150))",
     features: [
@@ -673,19 +673,19 @@ export const products: Product[] = [
       ["95%", "Transcription accuracy"],
       ["2min", "Post-call delivery"],
       ["0", "Data sent to cloud"],
-      ["100%", "Open source"],
+      ["100%", "Platform"],
     ],
   },
   {
     slug: "office-3d",
     index: "10",
     name: "Office 3D",
-    category: "Open Source",
+    category: "Platform",
     tagline: "A spatial workspace for distributed teams.",
     description:
       "Walk into a real-time 3D office. Proximity voice, shared whiteboards, focus rooms. Built on open WebGL stack, deployable on your domain.",
     bullets: ["Proximity voice", "Shared whiteboards", "Focus rooms", "Self-hostable"],
-    meta: "Open Source · Spatial · 2025",
+    meta: "Platform · Spatial · 2025",
     image: office3d,
     accent: "linear-gradient(135deg, oklch(0.65 0.2 320), oklch(0.62 0.22 295))",
     features: [
@@ -744,7 +744,7 @@ export const products: Product[] = [
     slug: "interview-analysis",
     index: "11",
     name: "Interview Analysis",
-    category: "Open Source",
+    category: "Platform",
     tagline: "Structured signals from every candidate conversation.",
     description:
       "Records and analyses interviews — competency mapping, sentiment arcs, red flags, scorecards. Reduces interviewer bias with explainable rubrics.",
@@ -754,7 +754,7 @@ export const products: Product[] = [
       "Bias-aware scorecards",
       "Explainable rubrics",
     ],
-    meta: "Open Source · HR Tech · 2025",
+    meta: "Platform · HR Tech · 2025",
     image: interviewanalysis,
     accent: "linear-gradient(135deg, oklch(0.7 0.15 200), oklch(0.78 0.12 200))",
     features: [
@@ -816,5 +816,5 @@ export const categories: ProductCategory[] = [
   "Flagship",
   "Enterprise",
   "Government",
-  "Open Source",
+  "Platform",
 ];
