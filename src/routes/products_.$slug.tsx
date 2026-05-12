@@ -45,7 +45,7 @@ export const Route = createFileRoute("/products_/$slug")({
 });
 
 function ProductPage() {
-  const { product: p } = Route.useLoaderData();
+  const { product: p } = Route.useLoaderData() as { product: import("@/data/products").Product };
   const idx = products.findIndex((x) => x.slug === p.slug);
   const next = products[(idx + 1) % products.length];
   const prev = products[(idx - 1 + products.length) % products.length];
@@ -329,7 +329,7 @@ function ProductPage() {
       <section className="pb-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-6">
           <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-4">
-            {p.stats.map(([k, v]) => (
+            {p.stats.map(([k, v]: [string, string]) => (
               <div key={v} className="bg-card/70 p-6 text-center backdrop-blur sm:p-8">
                 <div className="pdp-stat-val font-display text-3xl text-brand-gradient sm:text-4xl">
                   {k}

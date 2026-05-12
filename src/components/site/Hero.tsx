@@ -154,7 +154,7 @@ export function Hero() {
       style={{ ["--mx" as string]: "50%", ["--my" as string]: "30%", perspective: "1200px" }}
     >
       {/* Cinematic video bed */}
-      <div ref={videoRef} className="absolute inset-0 -z-20" style={{ transform: "scale(1.15)" }}>
+      <div ref={videoRef} className="absolute inset-0 -z-20 origin-center scale-[1.05] sm:scale-[1.15]">
         <video
           src="/hero-video.mp4"
           poster={heroBg}
@@ -163,7 +163,9 @@ export function Hero() {
           loop
           playsInline
           preload="auto"
-          className="h-full w-full object-cover opacity-70"
+          disablePictureInPicture
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-70"
+          style={{ objectPosition: "50% 35%" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background" />
       </div>
