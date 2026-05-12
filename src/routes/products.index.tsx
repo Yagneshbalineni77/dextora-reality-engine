@@ -232,12 +232,10 @@ function ProductGridCard({ product: p }: { product: (typeof products)[0] }) {
       {/* Image or gradient */}
       {p.image ? (
         <div className="relative flex aspect-[16/10] items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 opacity-10" style={{ background: p.accent }} />
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,oklch(0.05_0.01_260/0.9))]" />
           <img
             src={p.image}
             alt={p.name}
-            className="relative z-10 h-[75%] w-auto rounded-lg object-contain shadow-2xl transition-transform duration-700 group-hover:scale-105"
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
         </div>

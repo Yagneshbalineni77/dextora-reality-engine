@@ -214,19 +214,15 @@ function ProductCard({ product: p, index: i }: { product: (typeof products)[0]; 
 
         {/* Image */}
         <div className="card-image relative flex aspect-[16/10] items-center justify-center overflow-hidden">
-          {/* Subtle glow behind image */}
-          <div className="absolute inset-0 opacity-20" style={{ background: p.accent }} />
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,oklch(0.05_0.01_260/0.9))]" />
-
           {p.image ? (
             <img
               src={p.image}
               alt={p.name}
               loading="lazy"
-              className="relative z-10 h-[80%] w-auto rounded-xl object-contain shadow-[0_30px_60px_rgba(0,0,0,0.4)] transition-transform duration-[1400ms] ease-out hover:scale-[1.04]"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1400ms] ease-out hover:scale-[1.04]"
             />
           ) : (
-            <div className="relative z-10 h-[80%] w-full rounded-xl" style={{ background: p.accent }} />
+            <div className="absolute inset-0 h-full w-full" style={{ background: p.accent }} />
           )}
           {/* Cinematic vignette */}
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_50%,transparent_55%,oklch(0.05_0.01_260/0.7))]" />
